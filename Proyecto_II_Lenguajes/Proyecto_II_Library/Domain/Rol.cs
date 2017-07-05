@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_II_Library.Domain
 {
-    class Rol
+    public class Rol
     {
     }
 }
