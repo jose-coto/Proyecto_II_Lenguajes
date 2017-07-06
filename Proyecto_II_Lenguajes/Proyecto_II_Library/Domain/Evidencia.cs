@@ -11,7 +11,7 @@ namespace Proyecto_II_Library.Domain
         private int idEvidencia;
         private String titulo;
         private DateTime fechaIngreso;
-        private Char tipo;
+     
         private SubCriterio subCriterio;
 
         public Evidencia()
