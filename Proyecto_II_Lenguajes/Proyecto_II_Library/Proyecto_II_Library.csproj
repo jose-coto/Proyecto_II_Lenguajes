@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\FuncionarioData.cs" />
+    <Compile Include="DataAccess\AreaTematicaData.cs" />
+    <Compile Include="DataAccess\CriterioData.cs" />
     <Compile Include="Domain\AccionAdministrativa.cs" />
     <Compile Include="Domain\Actividad.cs" />
     <Compile Include="Domain\AreaTematica.cs" />
