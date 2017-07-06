@@ -40,7 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Rol.cs" />
+    <Compile Include="Domain\AccionAdministrativa.cs" />
+    <Compile Include="Domain\Actividad.cs" />
+    <Compile Include="Domain\AreaTematica.cs" />
+    <Compile Include="Domain\Criterio.cs" />
+    <Compile Include="Domain\Documento.cs" />
+    <Compile Include="Domain\EncargadoEvaluacion.cs" />
+    <Compile Include="Domain\Evaluacion.cs" />
+    <Compile Include="Domain\Evidencia.cs" />
+    <Compile Include="Domain\Funcionario.cs" />
+    <Compile Include="Domain\GuiaReconocimiento.cs" />
+    <Compile Include="Domain\Imagen.cs" />
+    <Compile Include="Domain\Normativa.cs" />
+    <Compile Include="Domain\Recinto.cs" />
+    <Compile Include="Domain\Role.cs" />
+    <Compile Include="Domain\SubCriterio.cs" />
+    <Compile Include="Domain\TipoDocumento.cs" />
+    <Compile Include="Domain\TipoParticipante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
