@@ -21,7 +21,30 @@ namespace Proyecto_II_Library.Domain
             this.normativaAdjunta = normativaAdjunta;
         }
 
-        public string Detalle { get => detalle; set => detalle = value; }
-        public string NormativaAdjunta { get => normativaAdjunta; set => normativaAdjunta = value; }
+        public string Detalle
+        {
+            get
+            {
+                return detalle;
+            }
+
+            set
+            {
+                detalle = value;
+            }
+        }
+
+        public string NormativaAdjunta
+        {
+            get
+            {
+                return normativaAdjunta;
+            }
+
+            set
+            {
+                normativaAdjunta = value;
+            }
+        }
     }
 }

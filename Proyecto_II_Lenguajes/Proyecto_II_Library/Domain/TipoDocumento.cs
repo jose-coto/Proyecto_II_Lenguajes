@@ -11,6 +11,32 @@ namespace Proyecto_II_Library.Domain
         private int idTipoDocumento;
         private String descripcion;
 
+        public int IdTipoDocumento
+        {
+            get
+            {
+                return idTipoDocumento;
+            }
+
+            set
+            {
+                idTipoDocumento = value;
+            }
+        }
+
+        public string Descripcion
+        {
+            get
+            {
+                return descripcion;
+            }
+
+            set
+            {
+                descripcion = value;
+            }
+        }
+
         public TipoDocumento()
         {
         }
@@ -21,7 +47,6 @@ namespace Proyecto_II_Library.Domain
             this.descripcion = descripcion;
         }
 
-        public int IdTipoDocumento { get => idTipoDocumento; set => idTipoDocumento = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
+
     }
 }

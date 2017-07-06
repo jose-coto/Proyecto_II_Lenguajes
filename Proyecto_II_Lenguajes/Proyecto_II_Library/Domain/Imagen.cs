@@ -16,6 +16,17 @@ namespace Proyecto_II_Library.Domain
 
         }
 
-        public int IdImagen { get => idImagen; set => idImagen = value; }
+        public int IdImagen
+        {
+            get
+            {
+                return idImagen;
+            }
+
+            set
+            {
+                idImagen = value;
+            }
+        }
     }
 }

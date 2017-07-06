@@ -13,6 +13,58 @@ namespace Proyecto_II_Library.Domain
         private String sigla;
         private LinkedList<Criterio> criterios;
 
+        public int IdAreaTematica
+        {
+            get
+            {
+                return idAreaTematica;
+            }
+
+            set
+            {
+                idAreaTematica = value;
+            }
+        }
+
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
+            }
+        }
+
+        public string Sigla
+        {
+            get
+            {
+                return sigla;
+            }
+
+            set
+            {
+                sigla = value;
+            }
+        }
+
+        public LinkedList<Criterio> Criterios
+        {
+            get
+            {
+                return criterios;
+            }
+
+            set
+            {
+                criterios = value;
+            }
+        }
+
         public AreaTematica()
         {
             this.criterios = new LinkedList<Criterio>();
@@ -26,9 +78,5 @@ namespace Proyecto_II_Library.Domain
             this.criterios = new LinkedList<Criterio>();
         }
 
-        public int IdAreaTematica { get => idAreaTematica; set => idAreaTematica = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Sigla { get => sigla; set => sigla = value; }
-        public LinkedList<Criterio> Criterios { get => criterios; set => criterios = value; }
     }
 }

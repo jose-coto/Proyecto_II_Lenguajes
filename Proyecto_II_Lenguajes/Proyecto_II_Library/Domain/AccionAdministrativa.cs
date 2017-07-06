@@ -21,7 +21,30 @@ namespace Proyecto_II_Library.Domain
             this.informeTecnico = informeTecnico;
         }
 
-        public string Detalle { get => detalle; set => detalle = value; }
-        public string InformeTecnico { get => informeTecnico; set => informeTecnico = value; }
+        public string Detalle
+        {
+            get
+            {
+                return detalle;
+            }
+
+            set
+            {
+                detalle = value;
+            }
+        }
+
+        public string InformeTecnico
+        {
+            get
+            {
+                return informeTecnico;
+            }
+
+            set
+            {
+                informeTecnico = value;
+            }
+        }
     }
 }

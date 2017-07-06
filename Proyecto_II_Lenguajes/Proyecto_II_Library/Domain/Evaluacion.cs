@@ -15,6 +15,84 @@ namespace Proyecto_II_Library.Domain
         private LinkedList<Evidencia> evidencias;
         private GuiaReconocimiento guiaReconocimiento;
 
+        public int IdEvaluacion
+        {
+            get
+            {
+                return idEvaluacion;
+            }
+
+            set
+            {
+                idEvaluacion = value;
+            }
+        }
+
+        public DateTime FechaInicioEvaluacion
+        {
+            get
+            {
+                return fechaInicioEvaluacion;
+            }
+
+            set
+            {
+                fechaInicioEvaluacion = value;
+            }
+        }
+
+        public DateTime FechaFinalEvaluacion
+        {
+            get
+            {
+                return fechaFinalEvaluacion;
+            }
+
+            set
+            {
+                fechaFinalEvaluacion = value;
+            }
+        }
+
+        public Recinto Recinto
+        {
+            get
+            {
+                return recinto;
+            }
+
+            set
+            {
+                recinto = value;
+            }
+        }
+
+        public LinkedList<Evidencia> Evidencias
+        {
+            get
+            {
+                return evidencias;
+            }
+
+            set
+            {
+                evidencias = value;
+            }
+        }
+
+        public GuiaReconocimiento GuiaReconocimiento
+        {
+            get
+            {
+                return guiaReconocimiento;
+            }
+
+            set
+            {
+                guiaReconocimiento = value;
+            }
+        }
+
         public Evaluacion()
         {
             this.recinto = new Recinto();
@@ -32,11 +110,6 @@ namespace Proyecto_II_Library.Domain
             this.guiaReconocimiento = new GuiaReconocimiento();
         }
 
-        public int IdEvaluacion { get => idEvaluacion; set => idEvaluacion = value; }
-        public DateTime FechaInicioEvaluacion { get => fechaInicioEvaluacion; set => fechaInicioEvaluacion = value; }
-        public DateTime FechaFinalEvaluacion { get => fechaFinalEvaluacion; set => fechaFinalEvaluacion = value; }
-        public Recinto Recinto { get => recinto; set => recinto = value; }
-        public LinkedList<Evidencia> Evidencias { get => evidencias; set => evidencias = value; }
-        internal GuiaReconocimiento GuiaReconocimiento { get => guiaReconocimiento; set => guiaReconocimiento = value; }
+        
     }
 }

@@ -15,6 +15,84 @@ namespace Proyecto_II_Library.Domain
         private String password;
         private Boolean enable;
 
+        public int IdFuncionario
+        {
+            get
+            {
+                return idFuncionario;
+            }
+
+            set
+            {
+                idFuncionario = value;
+            }
+        }
+
+        public string NombreFuncionario
+        {
+            get
+            {
+                return nombreFuncionario;
+            }
+
+            set
+            {
+                nombreFuncionario = value;
+            }
+        }
+
+        public string ApellidosFuncionario
+        {
+            get
+            {
+                return apellidosFuncionario;
+            }
+
+            set
+            {
+                apellidosFuncionario = value;
+            }
+        }
+
+        public string UserName
+        {
+            get
+            {
+                return userName;
+            }
+
+            set
+            {
+                userName = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                password = value;
+            }
+        }
+
+        public bool Enable
+        {
+            get
+            {
+                return enable;
+            }
+
+            set
+            {
+                enable = value;
+            }
+        }
+
         public Funcionario()
         {
 
@@ -30,11 +108,6 @@ namespace Proyecto_II_Library.Domain
             this.enable = enable;
         }
 
-        public int IdFuncionario { get => idFuncionario; set => idFuncionario = value; }
-        public string NombreFuncionario { get => nombreFuncionario; set => nombreFuncionario = value; }
-        public string ApellidosFuncionario { get => apellidosFuncionario; set => apellidosFuncionario = value; }
-        public string UserName { get => userName; set => userName = value; }
-        public string Password { get => password; set => password = value; }
-        public bool Enable { get => enable; set => enable = value; }
+
     }
 }

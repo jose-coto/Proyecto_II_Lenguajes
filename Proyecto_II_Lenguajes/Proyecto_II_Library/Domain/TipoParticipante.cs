@@ -11,6 +11,32 @@ namespace Proyecto_II_Library.Domain
         private int idTipoParticipante;
         private String descripcion;
 
+        public int IdTipoParticipante
+        {
+            get
+            {
+                return idTipoParticipante;
+            }
+
+            set
+            {
+                idTipoParticipante = value;
+            }
+        }
+
+        public string Descripcion
+        {
+            get
+            {
+                return descripcion;
+            }
+
+            set
+            {
+                descripcion = value;
+            }
+        }
+
         public TipoParticipante()
         {
         }
@@ -21,7 +47,6 @@ namespace Proyecto_II_Library.Domain
             this.descripcion = descripcion;
         }
 
-        public int IdTipoParticipante { get => idTipoParticipante; set => idTipoParticipante = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
+
     }
 }

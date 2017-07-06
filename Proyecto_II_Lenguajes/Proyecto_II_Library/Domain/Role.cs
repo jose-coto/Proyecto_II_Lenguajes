@@ -21,7 +21,30 @@ namespace Proyecto_II_Library.Domain
             this.nombreRole = nombreRole;
         }
 
-        public int IdRole { get => idRole; set => idRole = value; }
-        public string NombreRole { get => nombreRole; set => nombreRole = value; }
+        public int IdRole
+        {
+            get
+            {
+                return idRole;
+            }
+
+            set
+            {
+                idRole = value;
+            }
+        }
+
+        public string NombreRole
+        {
+            get
+            {
+                return nombreRole;
+            }
+
+            set
+            {
+                nombreRole = value;
+            }
+        }
     }
 }

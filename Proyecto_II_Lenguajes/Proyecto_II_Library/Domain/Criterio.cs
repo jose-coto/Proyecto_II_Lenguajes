@@ -12,6 +12,45 @@ namespace Proyecto_II_Library.Domain
         private String descripcion;
         private LinkedList<SubCriterio> subCriterios;
 
+        public int IdCriterio
+        {
+            get
+            {
+                return idCriterio;
+            }
+
+            set
+            {
+                idCriterio = value;
+            }
+        }
+
+        public string Descripcion
+        {
+            get
+            {
+                return descripcion;
+            }
+
+            set
+            {
+                descripcion = value;
+            }
+        }
+
+        public LinkedList<SubCriterio> SubCriterios
+        {
+            get
+            {
+                return subCriterios;
+            }
+
+            set
+            {
+                subCriterios = value;
+            }
+        }
+
         public Criterio()
         {
             this.subCriterios = new LinkedList<SubCriterio>();
@@ -24,8 +63,6 @@ namespace Proyecto_II_Library.Domain
             this.subCriterios = new LinkedList<SubCriterio>();
         }
 
-        public int IdCriterio { get => idCriterio; set => idCriterio = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public LinkedList<SubCriterio> SubCriterios { get => subCriterios; set => subCriterios = value; }
+     
     }
 }

@@ -22,7 +22,30 @@ namespace Proyecto_II_Library.Domain
             this.nombreRecinto = nombreRecinto;
         }
 
-        public int IdRecinto { get => idRecinto; set => idRecinto = value; }
-        public string NombreRecinto { get => nombreRecinto; set => nombreRecinto = value; }
+        public int IdRecinto
+        {
+            get
+            {
+                return idRecinto;
+            }
+
+            set
+            {
+                idRecinto = value;
+            }
+        }
+
+        public string NombreRecinto
+        {
+            get
+            {
+                return nombreRecinto;
+            }
+
+            set
+            {
+                nombreRecinto = value;
+            }
+        }
     }
 }

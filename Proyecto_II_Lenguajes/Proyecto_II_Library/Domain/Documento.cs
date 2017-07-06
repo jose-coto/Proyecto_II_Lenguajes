@@ -13,6 +13,58 @@ namespace Proyecto_II_Library.Domain
         private DateTime fecha;
         private TipoDocumento tipoDocumento;
 
+        public string Detalle
+        {
+            get
+            {
+                return detalle;
+            }
+
+            set
+            {
+                detalle = value;
+            }
+        }
+
+        public string Fuente
+        {
+            get
+            {
+                return fuente;
+            }
+
+            set
+            {
+                fuente = value;
+            }
+        }
+
+        public DateTime Fecha
+        {
+            get
+            {
+                return fecha;
+            }
+
+            set
+            {
+                fecha = value;
+            }
+        }
+
+        public TipoDocumento TipoDocumento
+        {
+            get
+            {
+                return tipoDocumento;
+            }
+
+            set
+            {
+                tipoDocumento = value;
+            }
+        }
+
         public Documento()
         {
             this.tipoDocumento = new TipoDocumento();
@@ -26,9 +78,6 @@ namespace Proyecto_II_Library.Domain
             this.tipoDocumento = new TipoDocumento();
         }
 
-        public string Detalle { get => detalle; set => detalle = value; }
-        public string Fuente { get => fuente; set => fuente = value; }
-        public DateTime Fecha { get => fecha; set => fecha = value; }
-        public TipoDocumento TipoDocumento { get => tipoDocumento; set => tipoDocumento = value; }
+        
     }
 }

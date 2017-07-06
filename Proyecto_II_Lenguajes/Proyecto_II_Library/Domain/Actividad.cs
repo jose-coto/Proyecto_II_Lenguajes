@@ -13,6 +13,58 @@ namespace Proyecto_II_Library.Domain
         private String descripcion;
         private LinkedList<Imagen> imagenes;
 
+        public int CantidadParticipantes
+        {
+            get
+            {
+                return cantidadParticipantes;
+            }
+
+            set
+            {
+                cantidadParticipantes = value;
+            }
+        }
+
+        public DateTime Fecha
+        {
+            get
+            {
+                return fecha;
+            }
+
+            set
+            {
+                fecha = value;
+            }
+        }
+
+        public string Descripcion
+        {
+            get
+            {
+                return descripcion;
+            }
+
+            set
+            {
+                descripcion = value;
+            }
+        }
+
+        public LinkedList<Imagen> Imagenes
+        {
+            get
+            {
+                return imagenes;
+            }
+
+            set
+            {
+                imagenes = value;
+            }
+        }
+
         public Actividad()
         {
             this.imagenes = new LinkedList<Imagen>();
@@ -26,9 +78,6 @@ namespace Proyecto_II_Library.Domain
             this.imagenes = new LinkedList<Imagen>();
         }
 
-        public int CantidadParticipantes { get => cantidadParticipantes; set => cantidadParticipantes = value; }
-        public DateTime Fecha { get => fecha; set => fecha = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public LinkedList<Imagen> Imagenes { get => imagenes; set => imagenes = value; }
+
     }
 }

@@ -11,6 +11,32 @@ namespace Proyecto_II_Library.Domain
         private int idSubCriterio;
         private String descripcion;
 
+        public int IdSubCriterio
+        {
+            get
+            {
+                return idSubCriterio;
+            }
+
+            set
+            {
+                idSubCriterio = value;
+            }
+        }
+
+        public string Descripcion
+        {
+            get
+            {
+                return descripcion;
+            }
+
+            set
+            {
+                descripcion = value;
+            }
+        }
+
         public SubCriterio()
         {
         }
@@ -21,7 +47,5 @@ namespace Proyecto_II_Library.Domain
             this.descripcion = descripcion;
         }
 
-        public int IdSubCriterio { get => idSubCriterio; set => idSubCriterio = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
     }
 }
