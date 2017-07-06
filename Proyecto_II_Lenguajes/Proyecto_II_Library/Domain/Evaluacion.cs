@@ -14,6 +14,7 @@ namespace Proyecto_II_Library.Domain
         private Recinto recinto;
         private LinkedList<Evidencia> evidencias;
         private GuiaReconocimiento guiaReconocimiento;
+        private LinkedList<EncargadoEvaluacion> evaluadores;
 
         public int IdEvaluacion
         {
@@ -98,6 +99,7 @@ namespace Proyecto_II_Library.Domain
             this.recinto = new Recinto();
             this.evidencias = new LinkedList<Evidencia>();
             this.guiaReconocimiento = new GuiaReconocimiento();
+            this.evaluadores = new LinkedList<EncargadoEvaluacion>();
         }
 
         public Evaluacion(int idEvaluacion, DateTime fechaInicioEvaluacion, DateTime fechaFinalEvaluacion)
@@ -108,8 +110,10 @@ namespace Proyecto_II_Library.Domain
             this.recinto = new Recinto();
             this.evidencias = new LinkedList<Evidencia>();
             this.guiaReconocimiento = new GuiaReconocimiento();
+            this.evaluadores = new LinkedList<EncargadoEvaluacion>();
+
         }
 
-        
+
     }
 }

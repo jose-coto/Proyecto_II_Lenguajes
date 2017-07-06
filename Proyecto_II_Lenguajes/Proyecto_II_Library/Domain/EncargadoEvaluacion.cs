@@ -9,7 +9,7 @@ namespace Proyecto_II_Library.Domain
     public class EncargadoEvaluacion
     {
         private Funcionario funcionario;
-        private Evaluacion evaluacion;
+        private LinkedList<Evaluacion> evaluaciones;
         private AreaTematica encargadoAreaTematica;
 
         public Funcionario Funcionario
@@ -25,18 +25,6 @@ namespace Proyecto_II_Library.Domain
             }
         }
 
-        public Evaluacion Evaluacion
-        {
-            get
-            {
-                return evaluacion;
-            }
-
-            set
-            {
-                evaluacion = value;
-            }
-        }
 
         public AreaTematica EncargadoAreaTematica
         {
@@ -51,10 +39,24 @@ namespace Proyecto_II_Library.Domain
             }
         }
 
+        public LinkedList<Evaluacion> Evaluaciones
+        {
+            get
+            {
+                return evaluaciones;
+            }
+
+
+            set
+            {
+                evaluaciones = value;
+            }
+        }
+
         public EncargadoEvaluacion()
         {
             this.funcionario = new Funcionario();
-            this.evaluacion = new Evaluacion();
+            this.evaluaciones = new LinkedList<Evaluacion>();
             this.encargadoAreaTematica = new AreaTematica();
         }
        
