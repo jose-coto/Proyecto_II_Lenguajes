@@ -12,7 +12,7 @@ namespace Proyecto_II_Library.Domain
         private String nombre;
         private DateTime annoPublicacion;
         private Boolean vigente;
-        private LinkedList<AreaTematica> areasTematica;
+        private LinkedList<AreaTematica> areasTematicas;
 
         public int IdGuiaReconocimiento
         {
@@ -70,18 +70,18 @@ namespace Proyecto_II_Library.Domain
         {
             get
             {
-                return areasTematica;
+                return areasTematicas;
             }
 
             set
             {
-                areasTematica = value;
+                areasTematicas = value;
             }
         }
 
         public GuiaReconocimiento()
         {
-            this.areasTematica = new LinkedList<AreaTematica>();
+            this.areasTematicas = new LinkedList<AreaTematica>();
         }
 
         public GuiaReconocimiento(int idGuiaReconocimiento, string nombre, DateTime annoPublicacion, bool vigente)
@@ -90,7 +90,7 @@ namespace Proyecto_II_Library.Domain
             this.nombre = nombre;
             this.annoPublicacion = annoPublicacion;
             this.vigente = vigente;
-            this.areasTematica = new LinkedList<AreaTematica>();
+            this.areasTematicas = new LinkedList<AreaTematica>();
         }
 
         

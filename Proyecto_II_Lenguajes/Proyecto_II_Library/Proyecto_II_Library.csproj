@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\FuncionarioData.cs" />
+    <Compile Include="DataAccess\GuiaReconocimientoData.cs" />
     <Compile Include="Domain\AccionAdministrativa.cs" />
     <Compile Include="Domain\Actividad.cs" />
     <Compile Include="Domain\AreaTematica.cs" />
