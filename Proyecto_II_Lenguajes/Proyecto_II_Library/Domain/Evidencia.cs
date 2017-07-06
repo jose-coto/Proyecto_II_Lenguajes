@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,73 @@ namespace Proyecto_II_Library.Domain
         private int idEvidencia;
         private String titulo;
         private DateTime fechaIngreso;
-     
+        private Char tipo;
         private SubCriterio subCriterio;
+
+        public int IdEvidencia
+        {
+            get
+            {
+                return idEvidencia;
+            }
+
+            set
+            {
+                idEvidencia = value;
+            }
+        }
+
+        public string Titulo
+        {
+            get
+            {
+                return titulo;
+            }
+
+            set
+            {
+                titulo = value;
+            }
+        }
+
+        public DateTime FechaIngreso
+        {
+            get
+            {
+                return fechaIngreso;
+            }
+
+            set
+            {
+                fechaIngreso = value;
+            }
+        }
+
+        public char Tipo
+        {
+            get
+            {
+                return tipo;
+            }
+
+            set
+            {
+                tipo = value;
+            }
+        }
+
+        public SubCriterio SubCriterio
+        {
+            get
+            {
+                return subCriterio;
+            }
+
+            set
+            {
+                subCriterio = value;
+            }
+        }
 
         public Evidencia()
         {
@@ -29,10 +95,5 @@ namespace Proyecto_II_Library.Domain
 
         }
 
-        public int IdEvidencia { get => idEvidencia; set => idEvidencia = value; }
-        public string Titulo { get => titulo; set => titulo = value; }
-        public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
-        public SubCriterio SubCriterio { get => subCriterio; set => subCriterio = value; }
-        public char Tipo { get => tipo; set => tipo = value; }
     }
 }
