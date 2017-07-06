@@ -11,6 +11,7 @@ namespace Proyecto_II_Library.Domain
         private int idEvidencia;
         private String titulo;
         private DateTime fechaIngreso;
+        private Char tipo;
         private SubCriterio subCriterio;
 
         public Evidencia()
@@ -18,11 +19,12 @@ namespace Proyecto_II_Library.Domain
             this.subCriterio = new SubCriterio();
         }
 
-        public Evidencia(int idEvidencia, string titulo, DateTime fechaIngreso)
+        public Evidencia(int idEvidencia, string titulo, DateTime fechaIngreso,char tipo)
         {
             this.idEvidencia = idEvidencia;
             this.titulo = titulo;
             this.fechaIngreso = fechaIngreso;
+            this.tipo = tipo;
             this.subCriterio = new SubCriterio();
 
         }
@@ -31,5 +33,6 @@ namespace Proyecto_II_Library.Domain
         public string Titulo { get => titulo; set => titulo = value; }
         public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
         public SubCriterio SubCriterio { get => subCriterio; set => subCriterio = value; }
+        public char Tipo { get => tipo; set => tipo = value; }
     }
 }
