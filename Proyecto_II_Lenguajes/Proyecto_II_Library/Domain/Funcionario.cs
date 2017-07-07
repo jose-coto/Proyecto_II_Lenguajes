@@ -14,6 +14,19 @@ namespace Proyecto_II_Library.Domain
         private String userName;
         private String password;
         private Boolean enable;
+        private Role role;
+
+        public Role Role
+        {
+            get
+            {
+                return role;
+            }
+            set
+            {
+                role = value;
+            }
+        }
 
         public int IdFuncionario
         {
@@ -95,7 +108,7 @@ namespace Proyecto_II_Library.Domain
 
         public Funcionario()
         {
-
+            this.role = new Role();
         }
 
         public Funcionario(int idFuncionario, string nombreFuncionario, string apellidosFuncionario, string userName, string password, bool enable)
@@ -106,6 +119,7 @@ namespace Proyecto_II_Library.Domain
             this.userName = userName;
             this.password = password;
             this.enable = enable;
+            this.role = new Role();
         }
 
 
