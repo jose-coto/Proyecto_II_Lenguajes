@@ -66,7 +66,7 @@ namespace Proyecto_II_Library.Domain
             }
         }
 
-        public LinkedList<AreaTematica> AreasTematica
+        public LinkedList<AreaTematica> AreasTematicas
         {
             get
             {

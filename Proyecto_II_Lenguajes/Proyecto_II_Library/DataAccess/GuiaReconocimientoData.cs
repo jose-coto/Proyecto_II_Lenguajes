@@ -1,4 +1,5 @@
-﻿using Proyecto_II_Library.Domain;
+﻿using Proyecto_II_Library.Business;
+using Proyecto_II_Library.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,10 +13,12 @@ namespace Proyecto_II_Library.DataAccess
     public class GuiaReconocimientoData
     {
         String connectionString;
+        AreaTematicaBusiness areaTematicaBusiness;
 
         public GuiaReconocimientoData(String connectionString)
         {
             this.connectionString = connectionString;
+            this.areaTematicaBusiness = new AreaTematicaBusiness(connectionString);
         }
 
         public GuiaReconocimiento findGuideById(int idGuia)
@@ -38,7 +41,7 @@ namespace Proyecto_II_Library.DataAccess
                 guiaReconocimiento.Nombre = row["nombre_guia_reconocimiento"].ToString();
                 guiaReconocimiento.AnnoPublicacion = DateTime.Parse(row["anno_publicacion"].ToString());
                 guiaReconocimiento.Vigente = Boolean.Parse(row["vigente"].ToString());
-                //Falta ingresar Áreas temáticas
+                guiaReconocimiento.AreasTematicas = areaTematicaBusiness.getAllAreaTematicasByGuide(guiaReconocimiento.IdGuiaReconocimiento);
             }
             return guiaReconocimiento;
         }
@@ -66,7 +69,8 @@ namespace Proyecto_II_Library.DataAccess
                 guiaReconocimiento.Nombre = row["nombre_guia_reconocimiento"].ToString();
                 guiaReconocimiento.AnnoPublicacion = DateTime.Parse(row["anno_publicacion"].ToString());
                 guiaReconocimiento.Vigente = Boolean.Parse(row["vigente"].ToString());
-                //Falta ingresar Áreas temáticas
+                guiaReconocimiento.AreasTematicas = areaTematicaBusiness.getAllAreaTematicasByGuide(guiaReconocimiento.IdGuiaReconocimiento);
+
                 guiasDeReconocimiento.AddLast(guiaReconocimiento);
             }
             
@@ -80,18 +84,49 @@ namespace Proyecto_II_Library.DataAccess
             cmdGuide.CommandType = System.Data.CommandType.StoredProcedure;
             cmdGuide.Parameters.Add(new SqlParameter("@nombreGuiaReconocimiento", guiaReconocimiento.Nombre));
             cmdGuide.Parameters.Add(new SqlParameter("@annoPublicacion", guiaReconocimiento.AnnoPublicacion));
-            cmdGuide.Parameters.Add(new SqlParameter("@Vigente", guiaReconocimiento.Vigente));
+            cmdGuide.Parameters.Add(new SqlParameter("@vigente", guiaReconocimiento.Vigente));
 
             SqlParameter parIdGuide = new SqlParameter("@idGuiaReconocimiento", System.Data.SqlDbType.Int);
             parIdGuide.Direction = System.Data.ParameterDirection.Output;
             cmdGuide.Parameters.Add(parIdGuide);
 
             SqlConnection connection = new SqlConnection(connectionString);
-            cmdGuide.Connection = connection;
+            SqlTransaction transaction = null;
 
-            cmdGuide.ExecuteNonQuery();
+            try
+            {
+                connection.Open();
+                transaction = connection.BeginTransaction();
+                cmdGuide.Connection = connection;
+                cmdGuide.Transaction = transaction;
 
-            guiaReconocimiento.IdGuiaReconocimiento = Int32.Parse(cmdGuide.Parameters["@idGuiaReconocimiento"].Value.ToString());
+                cmdGuide.ExecuteNonQuery();
+
+                guiaReconocimiento.IdGuiaReconocimiento = Int32.Parse(cmdGuide.Parameters["@idGuiaReconocimiento"].Value.ToString());
+
+                //Inserta las areas temáticas de la guia
+                foreach (AreaTematica areaTematicaActual in guiaReconocimiento.AreasTematicas)
+                {
+                    areaTematicaBusiness.insertar(areaTematicaActual, guiaReconocimiento);
+                }
+
+                transaction.Commit();
+            }
+            catch (SqlException ex)
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+                throw ex;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
 
             return guiaReconocimiento;
         }
