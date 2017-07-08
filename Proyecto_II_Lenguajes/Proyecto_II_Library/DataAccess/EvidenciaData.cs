@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Proyecto_II_Library.Business;
 using Proyecto_II_Library.Domain;
 
 namespace Proyecto_II_Library.DataAccess
@@ -78,7 +79,7 @@ namespace Proyecto_II_Library.DataAccess
 
                 if (evidencia.Tipo.Equals("AD"))
                 {
-                    AccionAdministrativaData aad = new AccionAdministrativaData(connectionString);
+                    AccionAdministrativaBusiness aad = new AccionAdministrativaBusiness(connectionString);
                     aad.insertar(accion);
                 }else if (evidencia.Tipo.Equals("NO"))
                 {
@@ -86,7 +87,7 @@ namespace Proyecto_II_Library.DataAccess
                 }
                 else if (evidencia.Tipo.Equals("DO"))
                 {
-                    DocumentoData dd = new DocumentoData(connectionString);
+                    DocumentoBusiness dd = new DocumentoBusiness(connectionString);
                     dd.insertar(documento);
                 }
                 else

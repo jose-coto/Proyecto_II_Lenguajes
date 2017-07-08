@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Proyecto_II_Library.Business;
 using Proyecto_II_Library.Domain;
 
 namespace Proyecto_II_Library.DataAccess
@@ -12,12 +13,12 @@ namespace Proyecto_II_Library.DataAccess
     public class CriterioData
     {
         private String connectionString;
-        private SubCriterioData subCriterioData;
+        private SubCriterioBusiness subCriterioBusiness;
 
         public CriterioData(string connectionString)
         {
             this.connectionString = connectionString;
-            this.subCriterioData = new SubCriterioData(connectionString);
+            this.subCriterioBusiness = new SubCriterioBusiness(connectionString);
         }
 
         public LinkedList<Criterio> findAllCriteriosByAreaTematica(int idAreaTematica)
@@ -39,7 +40,7 @@ namespace Proyecto_II_Library.DataAccess
             foreach (DataRow row in rows)
             {
                 Criterio criterio = new Criterio(Int32.Parse(row["id_criterio"].ToString()), row["descripcion"].ToString());
-                criterio.SubCriterios = subCriterioData.getAllSubCriteriosByCriterio(criterio.IdCriterio);
+                criterio.SubCriterios = subCriterioBusiness.getAllSubCriteriosByCriterio(criterio.IdCriterio);
                 criterios.AddLast(criterio);
             }
 
@@ -65,7 +66,7 @@ namespace Proyecto_II_Library.DataAccess
             foreach (DataRow row in rows)
             {
                 criterio = new Criterio(Int32.Parse(row["id_criterio"].ToString()), row["descripcion"].ToString());
-                criterio.SubCriterios = subCriterioData.getAllSubCriteriosByCriterio(criterio.IdCriterio);
+                criterio.SubCriterios = subCriterioBusiness.getAllSubCriteriosByCriterio(criterio.IdCriterio);
             }
 
             return criterio;

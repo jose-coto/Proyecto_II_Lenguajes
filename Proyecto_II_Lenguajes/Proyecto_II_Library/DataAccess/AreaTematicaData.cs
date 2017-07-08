@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Proyecto_II_Library.Business;
 using Proyecto_II_Library.Domain;
 
 namespace Proyecto_II_Library.DataAccess
@@ -12,12 +13,12 @@ namespace Proyecto_II_Library.DataAccess
     public class AreaTematicaData
     {
         private String connectionString;
-        private CriterioData criterioData;
+        private CriterioBusiness criterioBusiness;
 
         public AreaTematicaData(string connectionString)
         {
             this.connectionString = connectionString;
-            this.criterioData = new CriterioData(connectionString);
+            this.criterioBusiness= new CriterioBusiness(connectionString);
         }
 
         public LinkedList<AreaTematica> getAllAreaTematicas()
@@ -41,7 +42,7 @@ namespace Proyecto_II_Library.DataAccess
                 AreaTematica area = new AreaTematica(Int32.Parse(row["id_area_tematica"].ToString()), row["nombre_area_tematica"].ToString(),
                     row["sigla"].ToString());
 
-                area.Criterios = criterioData.findAllCriteriosByAreaTematica(area.IdAreaTematica);
+                area.Criterios = criterioBusiness.findAllCriteriosByAreaTematica(area.IdAreaTematica);
                 areasTematicas.AddLast(area);
             }
 
@@ -70,7 +71,7 @@ namespace Proyecto_II_Library.DataAccess
                 AreaTematica area = new AreaTematica(Int32.Parse(row["id_area_tematica"].ToString()), row["nombre_area_tematica"].ToString(),
                     row["sigla"].ToString());
 
-                area.Criterios = criterioData.findAllCriteriosByAreaTematica(area.IdAreaTematica);
+                area.Criterios = criterioBusiness.findAllCriteriosByAreaTematica(area.IdAreaTematica);
                 areasTematicas.AddLast(area);
             }
 
@@ -99,7 +100,7 @@ namespace Proyecto_II_Library.DataAccess
                 areasTematica = new AreaTematica(Int32.Parse(row["id_area_tematica"].ToString()), row["nombre_area_tematica"].ToString(),
                     row["sigla"].ToString());
 
-                areasTematica.Criterios = criterioData.findAllCriteriosByAreaTematica(areasTematica.IdAreaTematica);
+                areasTematica.Criterios = criterioBusiness.findAllCriteriosByAreaTematica(areasTematica.IdAreaTematica);
             }
 
             return areasTematica;
