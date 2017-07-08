@@ -45,7 +45,7 @@ namespace Proyecto_II_Library.DataAccess
             return subCriterios;
         }
 
-        public SubCriterio getSubCriteriosByCode(int idSubCriterio)
+        public SubCriterio getSubCriterioByCode(int idSubCriterio)
         {
             String sqlSelect = "select sc.id_subCriterio,sc.descripcion " +
                 " from SubCriterio sc" +
@@ -117,5 +117,6 @@ namespace Proyecto_II_Library.DataAccess
 
             return subCriterio;
         }
+
     }
 }

@@ -92,7 +92,6 @@ namespace Proyecto_II_Library.Domain
             this.fechaIngreso = fechaIngreso;
             this.tipo = tipo;
             this.subCriterio = new SubCriterio();
-
         }
 
     }
