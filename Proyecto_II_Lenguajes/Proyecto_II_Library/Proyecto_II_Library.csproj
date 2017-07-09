@@ -31,7 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +49,7 @@
     <Compile Include="Business\DocumentoBusiness.cs" />
     <Compile Include="Business\EvidenciaBusiness.cs" />
     <Compile Include="Business\GuiaReconocimientoBusiness.cs" />
+    <Compile Include="Business\SeguridadBusiness.cs" />
     <Compile Include="Business\SubCriterioBusiness.cs" />
     <Compile Include="DataAccess\AccionAdministrativaData.cs" />
     <Compile Include="DataAccess\AreaTematicaData.cs" />
@@ -54,6 +58,7 @@
     <Compile Include="DataAccess\EvidenciaData.cs" />
     <Compile Include="DataAccess\FuncionarioData.cs" />
     <Compile Include="DataAccess\GuiaReconocimientoData.cs" />
+    <Compile Include="DataAccess\SeguridadData.cs" />
     <Compile Include="DataAccess\SubCriterioData.cs" />
     <Compile Include="Domain\AccionAdministrativa.cs" />
     <Compile Include="Domain\Actividad.cs" />
@@ -73,6 +78,7 @@
     <Compile Include="Domain\TipoDocumento.cs" />
     <Compile Include="Domain\TipoParticipante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\CustomRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
