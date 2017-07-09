@@ -35,7 +35,9 @@
     <uc3:UserControlNormativa ID="UserControlNormativa1" runat="server" Visible="False"/>
     <p>
     <uc4:UserControlActividad ID="UserControlActividad1" runat="server" Visible="False"/>
+
     <p>
-        <asp:Button ID="btnRegistrarEvidencia" runat="server" Text="Registrar" Visible="False" />
+
+    <asp:Button ID="btnRegistrarEvidencia" runat="server" Text="Registrar" Visible="False" OnClick="btnRegistrarEvidencia_Click" />
     <br />
 </asp:Content>

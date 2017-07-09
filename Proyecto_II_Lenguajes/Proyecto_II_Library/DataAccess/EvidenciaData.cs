@@ -48,8 +48,7 @@ namespace Proyecto_II_Library.DataAccess
             return evidencia;
         }
 
-        public Evidencia insertar(Evidencia evidencia, Evaluacion evaluacion,AccionAdministrativa accion,
-                                  Normativa normativa,Documento documento,Actividad actividad)
+        public Evidencia insertar(Evidencia evidencia, Evaluacion evaluacion)
         {
             SqlCommand cmdEvidencia = new SqlCommand();
             cmdEvidencia.CommandText = "insertar_evidencia";
@@ -77,24 +76,6 @@ namespace Proyecto_II_Library.DataAccess
                 cmdEvidencia.ExecuteNonQuery();
                 evidencia.IdEvidencia = Int32.Parse(cmdEvidencia.Parameters["@idEvidencia"].Value.ToString());
 
-                if (evidencia.Tipo.Equals("AD"))
-                {
-                    AccionAdministrativaBusiness aad = new AccionAdministrativaBusiness(connectionString);
-                    aad.insertar(accion);
-                }else if (evidencia.Tipo.Equals("NO"))
-                {
-                    //insertar normativa
-                }
-                else if (evidencia.Tipo.Equals("DO"))
-                {
-                    DocumentoBusiness dd = new DocumentoBusiness(connectionString);
-                    dd.insertar(documento);
-                }
-                else
-                {
-                    //insertar Actividad
-                }
-
                 transaction.Commit();
             }
             catch (SqlException ex)
@@ -110,7 +91,6 @@ namespace Proyecto_II_Library.DataAccess
                 if (connection != null)
                 {
                     connection.Close();
-
                 }
             }
 

@@ -6,5 +6,5 @@
 <br />
 <asp:Label ID="lblInforme" runat="server" Text="Informe Tecnico:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
-<asp:TextBox ID="tbInformeAccion" runat="server" Width="399px"></asp:TextBox>
+<asp:TextBox ID="tbInformeAccion" runat="server" Width="350px"></asp:TextBox>
 
