@@ -3,8 +3,7 @@
 <%@ Register src="UserControlDocumento.ascx" tagname="UserControlDocumento" tagprefix="uc2" %>
 <%@ Register src="UserControlNormativa.ascx" tagname="UserControlNormativa" tagprefix="uc3" %>
 <%@ Register src="UserControlActividad.ascx" tagname="UserControlActividad" tagprefix="uc4" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
         <asp:Label ID="lblMensajeEvidencia" runat="server" Font-Bold="True" Font-Size="Large" Text="Pro favor rellena los siguientes espacios para insertar la evidencia"></asp:Label>
@@ -36,5 +35,7 @@
     <uc3:UserControlNormativa ID="UserControlNormativa1" runat="server" Visible="False"/>
     <p>
     <uc4:UserControlActividad ID="UserControlActividad1" runat="server" Visible="False"/>
+    <p>
+        <asp:Button ID="btnRegistrarEvidencia" runat="server" Text="Registrar" Visible="False" />
     <br />
 </asp:Content>

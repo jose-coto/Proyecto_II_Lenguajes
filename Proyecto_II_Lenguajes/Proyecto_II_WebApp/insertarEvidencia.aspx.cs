@@ -18,6 +18,7 @@ namespace Proyecto_II_WebApp
         {
             if (ddlTipoEvidencia.SelectedValue.ToString().Equals(""))
             {
+                btnRegistrarEvidencia.Visible = false;
                 UserControlAccionAdministrativa1.Visible = false;
                 UserControlDocumento1.Visible = false;
                 UserControlActividad1.Visible = false;
@@ -25,6 +26,7 @@ namespace Proyecto_II_WebApp
             }
             else if (ddlTipoEvidencia.SelectedValue.ToString().Equals("AA"))
             {
+                btnRegistrarEvidencia.Visible = true;
                 UserControlAccionAdministrativa1.Visible = true;
                 UserControlDocumento1.Visible = false;
                 UserControlActividad1.Visible = false;
@@ -32,12 +34,14 @@ namespace Proyecto_II_WebApp
             }
             else if (ddlTipoEvidencia.SelectedValue.ToString().Equals("DO"))
             {
+                btnRegistrarEvidencia.Visible = true;
                 UserControlDocumento1.Visible = true;
                 UserControlAccionAdministrativa1.Visible = false;
                 UserControlActividad1.Visible = false;
                 UserControlNormativa1.Visible = false;
             }else if (ddlTipoEvidencia.SelectedValue.ToString().Equals("NO"))
             {
+                btnRegistrarEvidencia.Visible = true;
                 UserControlDocumento1.Visible = false;
                 UserControlAccionAdministrativa1.Visible = false;
                 UserControlActividad1.Visible = false;
@@ -45,6 +49,7 @@ namespace Proyecto_II_WebApp
             }
             else
             {
+                btnRegistrarEvidencia.Visible = true;
                 UserControlDocumento1.Visible = false;
                 UserControlAccionAdministrativa1.Visible = false;
                 UserControlActividad1.Visible = true;

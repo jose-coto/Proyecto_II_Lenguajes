@@ -110,5 +110,14 @@ namespace Proyecto_II_WebApp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::Proyecto_II_WebApp.UserControlActividad UserControlActividad1;
+        
+        /// <summary>
+        /// Control btnRegistrarEvidencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegistrarEvidencia;
     }
 }
