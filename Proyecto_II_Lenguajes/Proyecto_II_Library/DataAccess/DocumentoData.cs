@@ -44,7 +44,7 @@ namespace Proyecto_II_Library.DataAccess
             return documento;
         }
 
-        public void insertar(Documento documento)
+        public Evidencia insertar(Documento documento)
         {
             SqlCommand cmdDocumento = new SqlCommand();
             cmdDocumento.CommandText = "insertar_documento";
@@ -82,9 +82,10 @@ namespace Proyecto_II_Library.DataAccess
                 if (connection != null)
                 {
                     connection.Close();
-
                 }
             }
+
+            return documento;
         }
     }
 }
