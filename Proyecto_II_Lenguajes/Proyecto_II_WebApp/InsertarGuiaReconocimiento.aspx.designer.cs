@@ -94,31 +94,31 @@ namespace Proyecto_II_WebApp {
         protected global::System.Web.UI.WebControls.SqlDataSource dsGvGuias;
         
         /// <summary>
-        /// Control phAreaTematica.
+        /// Control UserControlAreaTematica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phAreaTematica;
+        protected global::Proyecto_II_WebApp.ucAreaTematica UserControlAreaTematica;
         
         /// <summary>
-        /// Control phCriterio.
+        /// Control UserControlCriterio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phCriterio;
+        protected global::Proyecto_II_WebApp.ucCriterio UserControlCriterio;
         
         /// <summary>
-        /// Control phSubcriterio.
+        /// Control UserControlSubcriterio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phSubcriterio;
+        protected global::Proyecto_II_WebApp.ucSubCriterio UserControlSubcriterio;
         
         /// <summary>
         /// Control btnAgregarSubcriterio.
@@ -155,5 +155,14 @@ namespace Proyecto_II_WebApp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvSubcriterios;
+        
+        /// <summary>
+        /// Control btnInsertarGuia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnInsertarGuia;
     }
 }
