@@ -70,6 +70,7 @@
     <Content Include="ViewImagen.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="insertarEvidencia.aspx" />
+    <Content Include="InsertarGuiaReconocimiento.aspx" />
     <Content Include="Logon.aspx" />
     <Content Include="packages.config" />
     <Content Include="ProyectoII.Master" />
@@ -99,6 +100,9 @@
     <Content Include="UserControlActividad.ascx" />
     <Content Include="UserControlDocumento.ascx" />
     <Content Include="UserControlNormativa.ascx" />
+    <Content Include="ucAreaTematica.ascx" />
+    <Content Include="ucCriterio.ascx" />
+    <Content Include="ucSubCriterio.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +126,13 @@
     </Compile>
     <Compile Include="insertarEvidencia.aspx.designer.cs">
       <DependentUpon>insertarEvidencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarGuiaReconocimiento.aspx.cs">
+      <DependentUpon>InsertarGuiaReconocimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertarGuiaReconocimiento.aspx.designer.cs">
+      <DependentUpon>InsertarGuiaReconocimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logon.aspx.cs">
       <DependentUpon>Logon.aspx</DependentUpon>
@@ -165,6 +176,27 @@
     </Compile>
     <Compile Include="UserControlNormativa.ascx.designer.cs">
       <DependentUpon>UserControlNormativa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucAreaTematica.ascx.cs">
+      <DependentUpon>ucAreaTematica.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucAreaTematica.ascx.designer.cs">
+      <DependentUpon>ucAreaTematica.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucCriterio.ascx.cs">
+      <DependentUpon>ucCriterio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucCriterio.ascx.designer.cs">
+      <DependentUpon>ucCriterio.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ucSubCriterio.ascx.cs">
+      <DependentUpon>ucSubCriterio.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucSubCriterio.ascx.designer.cs">
+      <DependentUpon>ucSubCriterio.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
