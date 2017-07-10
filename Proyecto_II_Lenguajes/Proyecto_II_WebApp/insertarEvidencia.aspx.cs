@@ -14,6 +14,14 @@ namespace Proyecto_II_WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            EvaluacionBusiness evaluacionBus = new EvaluacionBusiness(WebConfigurationManager.ConnectionStrings["ProyectoII"].ConnectionString);
+            LinkedList<Evaluacion> evaluaciones = evaluacionBus.getEvaluaciones();
+
+            ddlEvaluacion.DataSource = evaluaciones;
+            ddlEvaluacion.DataTextField= "fechaInicioEvaluacion";
+            ddlEvaluacion.DataValueField = "idEvaluacion";
+            ddlEvaluacion.DataBind();
+
 
         }
 
@@ -68,12 +76,12 @@ namespace Proyecto_II_WebApp
             evidencia.Titulo = tbTitulo.Text;
             evidencia.FechaIngreso = DateTime.Parse(tbFecha.Text);
             evidencia.Tipo = Char.Parse(ddlTipoEvidencia.SelectedValue.ToString());
-            evidencia.SubCriterio.IdSubCriterio = 4;
+            evidencia.SubCriterio.IdSubCriterio = Convert.ToInt32(Request.QueryString["idSubCriterio"]);
 
             EvidenciaBusiness evidenciaBusiness = new EvidenciaBusiness(connectionString);
 
             Evaluacion evaluacion = new Evaluacion();
-            evaluacion.IdEvaluacion = 2;
+            evaluacion.IdEvaluacion = Int32.Parse(ddlEvaluacion.SelectedItem.Value);
 
             evidencia = evidenciaBusiness.insertar(evidencia, evaluacion);
 
@@ -116,5 +124,10 @@ namespace Proyecto_II_WebApp
 
             }
         }
+
+        protected void ddlEvaluacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
+    }
 }

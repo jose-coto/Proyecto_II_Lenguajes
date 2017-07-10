@@ -29,8 +29,8 @@ namespace Proyecto_II_WebApp
 
         public int CantidadParticipantesActividad
         {
-            get { return Int32.Parse(tbCantidadParticipantesctividad.Text); }
-            set { tbCantidadParticipantesctividad.Text = value.ToString(); }
+            get { return Int32.Parse(tbCantidadParticipantesActividad.Text); }
+            set { tbCantidadParticipantesActividad.Text = value.ToString(); }
         }
 
         public LinkedList<TipoParticipante> tipoParticipantes

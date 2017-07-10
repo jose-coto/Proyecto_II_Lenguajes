@@ -47,6 +47,7 @@
     <Compile Include="Business\AreaTematicaBusiness.cs" />
     <Compile Include="Business\CriterioBusiness.cs" />
     <Compile Include="Business\DocumentoBusiness.cs" />
+    <Compile Include="Business\EvaluacionBusiness.cs" />
     <Compile Include="Business\EvidenciaBusiness.cs" />
     <Compile Include="Business\FuncionarioBusiness.cs" />
     <Compile Include="Business\GuiaReconocimientoBusiness.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="DataAccess\AreaTematicaData.cs" />
     <Compile Include="DataAccess\CriterioData.cs" />
     <Compile Include="DataAccess\DocumentoData.cs" />
+    <Compile Include="DataAccess\EvaluacionData.cs" />
     <Compile Include="DataAccess\EvidenciaData.cs" />
     <Compile Include="DataAccess\FuncionarioData.cs" />
     <Compile Include="DataAccess\GuiaReconocimientoData.cs" />
