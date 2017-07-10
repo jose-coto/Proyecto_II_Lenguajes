@@ -5,6 +5,7 @@
 <%@ Register src="UserControlActividad.ascx" tagname="UserControlActividad" tagprefix="uc4" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <p>
         <asp:Label ID="lblMensajeEvidencia" runat="server" Font-Bold="True" Font-Size="Large" Text="Pro favor rellena los siguientes espacios para insertar la evidencia"></asp:Label>
     <p>
@@ -20,10 +21,10 @@
 &nbsp;&nbsp;&nbsp;
         <asp:DropDownList ID="ddlTipoEvidencia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTipoEvidencia_SelectedIndexChanged">
             <asp:ListItem></asp:ListItem>
-            <asp:ListItem Value="AA">Acción Administrativa</asp:ListItem>
-            <asp:ListItem Value="NO">Normativa</asp:ListItem>
-            <asp:ListItem Value="DO">Documento</asp:ListItem>
-            <asp:ListItem Value="AC">Actividad</asp:ListItem>
+            <asp:ListItem Value="M">Acción Administrativa</asp:ListItem>
+            <asp:ListItem Value="N">Normativa</asp:ListItem>
+            <asp:ListItem Value="D">Documento</asp:ListItem>
+            <asp:ListItem Value="A">Actividad</asp:ListItem>
         </asp:DropDownList>    
     <br />
         &nbsp;<p>
@@ -40,4 +41,6 @@
 
     <asp:Button ID="btnRegistrarEvidencia" runat="server" Text="Registrar" Visible="False" OnClick="btnRegistrarEvidencia_Click" />
     <br />
+        
 </asp:Content>
+    

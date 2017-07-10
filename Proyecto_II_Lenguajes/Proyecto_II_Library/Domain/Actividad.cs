@@ -11,6 +11,7 @@ namespace Proyecto_II_Library.Domain
         private int cantidadParticipantes;
         private DateTime fecha;
         private String descripcion;
+        private int idEvidencia;
         private LinkedList<TipoParticipante> tipoParticipantes;
         private LinkedList<Imagen> imagenes;
 
@@ -78,21 +79,33 @@ namespace Proyecto_II_Library.Domain
             }
         }
 
+        public int IdEvidencia
+        {
+            get
+            {
+                return idEvidencia;
+            }
+
+            set
+            {
+                idEvidencia = value;
+            }
+        }
+
         public Actividad()
         {
             this.imagenes = new LinkedList<Imagen>();
             this.tipoParticipantes = new LinkedList<TipoParticipante>();
         }
 
-        public Actividad(int cantidadParticipantes, DateTime fecha, string descripcion)
+        public Actividad(int cantidadParticipantes, DateTime fecha, string descripcion, int idEvidencia, LinkedList<TipoParticipante> tipoParticipantes, LinkedList<Imagen> imagenes)
         {
             this.cantidadParticipantes = cantidadParticipantes;
             this.fecha = fecha;
             this.descripcion = descripcion;
-            this.imagenes = new LinkedList<Imagen>();
-            this.tipoParticipantes = new LinkedList<TipoParticipante>();
+            this.idEvidencia = idEvidencia;
+            this.tipoParticipantes = tipoParticipantes;
+            this.imagenes = imagenes;
         }
-
-
     }
 }

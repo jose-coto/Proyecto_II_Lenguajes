@@ -27,7 +27,7 @@ namespace Proyecto_II_WebApp
                 UserControlActividad1.Visible = false;
                 UserControlNormativa1.Visible = false;
             }
-            else if (ddlTipoEvidencia.SelectedValue.ToString().Equals("AA"))
+            else if (ddlTipoEvidencia.SelectedValue.ToString().Equals("M"))
             {
                 btnRegistrarEvidencia.Visible = true;
                 UserControlAccionAdministrativa1.Visible = true;
@@ -35,14 +35,14 @@ namespace Proyecto_II_WebApp
                 UserControlActividad1.Visible = false;
                 UserControlNormativa1.Visible = false;
             }
-            else if (ddlTipoEvidencia.SelectedValue.ToString().Equals("DO"))
+            else if (ddlTipoEvidencia.SelectedValue.ToString().Equals("D"))
             {
                 btnRegistrarEvidencia.Visible = true;
                 UserControlDocumento1.Visible = true;
                 UserControlAccionAdministrativa1.Visible = false;
                 UserControlActividad1.Visible = false;
                 UserControlNormativa1.Visible = false;
-            }else if (ddlTipoEvidencia.SelectedValue.ToString().Equals("NO"))
+            }else if (ddlTipoEvidencia.SelectedValue.ToString().Equals("N"))
             {
                 btnRegistrarEvidencia.Visible = true;
                 UserControlDocumento1.Visible = false;
@@ -68,15 +68,16 @@ namespace Proyecto_II_WebApp
             evidencia.Titulo = tbTitulo.Text;
             evidencia.FechaIngreso = DateTime.Parse(tbFecha.Text);
             evidencia.Tipo = Char.Parse(ddlTipoEvidencia.SelectedValue.ToString());
-            //evidencia.SubCriterio.IdSubCriterio= subcriterio tomado del link
+            evidencia.SubCriterio.IdSubCriterio = 4;
 
             EvidenciaBusiness evidenciaBusiness = new EvidenciaBusiness(connectionString);
 
-            Evaluacion evaluacion = null;
+            Evaluacion evaluacion = new Evaluacion();
+            evaluacion.IdEvaluacion = 2;
 
             evidencia = evidenciaBusiness.insertar(evidencia, evaluacion);
 
-            if (evidencia.Tipo.Equals("AA"))
+            if (evidencia.Tipo.Equals("M"))
             {
                 AccionAdministrativa accion = new AccionAdministrativa();
                 accion.Detalle = UserControlAccionAdministrativa1.DetalleAccion;
@@ -85,12 +86,12 @@ namespace Proyecto_II_WebApp
                 AccionAdministrativaBusiness aad = new AccionAdministrativaBusiness(connectionString);
                 aad.insertar(accion);
             }
-            else if (evidencia.Tipo.Equals("NO"))
+            else if (evidencia.Tipo.Equals("N"))
             {
                 Normativa normativa = new Normativa();
                 //insertar normativa
             }
-            else if (evidencia.Tipo.Equals("DO"))
+            else if (evidencia.Tipo.Equals("D"))
             {
                 Documento documento = new Documento();
                 documento.Detalle = UserControlDocumento1.DetalleDocumento;
@@ -102,10 +103,18 @@ namespace Proyecto_II_WebApp
                 db.insertar(documento);
             }
             else
-            {
-                Actividad actividad = new Actividad();
-                //insertar Actividad
+            {       
+                Actividad actividad = new Actividad
+                 (UserControlActividad1.CantidadParticipantesActividad,
+                 UserControlActividad1.FechaActividad,
+                 UserControlActividad1.DescripcionActividad,
+                 evidencia.IdEvidencia,
+                 UserControlActividad1.tipoParticipantes,
+                 UserControlActividad1.imagenes());
+
+                 evidenciaBusiness.insertarActividad(actividad);
+
             }
         }
-    }
+        }
 }
