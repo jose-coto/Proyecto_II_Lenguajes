@@ -24,7 +24,7 @@ namespace Proyecto_II_Library.Business
 
         public SubCriterio getSubCriteriosByCode(int idSubCriterio)
         {
-            return subCriterioData.getSubCriteriosByCode(idSubCriterio);
+            return subCriterioData.getSubCriterioByCode(idSubCriterio);
         }
 
         public SubCriterio insertar(SubCriterio subCriterio, Criterio criterio)

@@ -51,6 +51,8 @@
     <Compile Include="Business\GuiaReconocimientoBusiness.cs" />
     <Compile Include="Business\SeguridadBusiness.cs" />
     <Compile Include="Business\SubCriterioBusiness.cs" />
+    <Compile Include="Business\TipoDocumentoBusiness.cs" />
+    <Compile Include="Business\TipoParticipanteBusiness.cs" />
     <Compile Include="DataAccess\AccionAdministrativaData.cs" />
     <Compile Include="DataAccess\AreaTematicaData.cs" />
     <Compile Include="DataAccess\CriterioData.cs" />
@@ -60,6 +62,8 @@
     <Compile Include="DataAccess\GuiaReconocimientoData.cs" />
     <Compile Include="DataAccess\SeguridadData.cs" />
     <Compile Include="DataAccess\SubCriterioData.cs" />
+    <Compile Include="DataAccess\TipoDocumentoData.cs" />
+    <Compile Include="DataAccess\TipoParticipanteData.cs" />
     <Compile Include="Domain\AccionAdministrativa.cs" />
     <Compile Include="Domain\Actividad.cs" />
     <Compile Include="Domain\AreaTematica.cs" />

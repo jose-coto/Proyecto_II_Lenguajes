@@ -43,7 +43,7 @@ namespace Proyecto_II_Library.DataAccess
             return accion;
         }
 
-        public void insertar(AccionAdministrativa accion)
+        public Evidencia insertar(AccionAdministrativa accion)
         {
             SqlCommand cmdAccion = new SqlCommand();
             cmdAccion.CommandText = "insertar_accion_administrativa";
@@ -79,9 +79,10 @@ namespace Proyecto_II_Library.DataAccess
                 if (connection != null)
                 {
                     connection.Close();
-
                 }
             }
+
+            return accion;
         }
     }
 }

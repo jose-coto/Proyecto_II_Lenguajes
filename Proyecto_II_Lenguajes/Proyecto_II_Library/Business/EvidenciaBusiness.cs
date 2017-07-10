@@ -22,10 +22,9 @@ namespace Proyecto_II_Library.Business
             return evidenciaData.getEvidenciaBySubCriterio(idSubCriterio);
         }
 
-        public Evidencia insertar(Evidencia evidencia, Evaluacion evaluacion, AccionAdministrativa accion,
-                                  Normativa normativa, Documento documento, Actividad actividad)
+        public Evidencia insertar(Evidencia evidencia, Evaluacion evaluacion)
         {
-            evidenciaData.insertar(evidencia, evaluacion, accion, normativa, documento, actividad);
+            return evidenciaData.insertar(evidencia, evaluacion);
         }
     }
 }

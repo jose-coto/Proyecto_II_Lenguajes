@@ -12,7 +12,18 @@ namespace Proyecto_II_Library.Business
     {
         SeguridadData seguridadData;
 
-        public SeguridadData SeguridadData { get => seguridadData; set => seguridadData = value; }
+        public SeguridadData SeguridadData
+        {
+            get
+            {
+                return seguridadData;
+            }
+
+            set
+            {
+                seguridadData = value;
+            }
+        }
 
         public SeguridadBusiness(string connectionString)
         {
