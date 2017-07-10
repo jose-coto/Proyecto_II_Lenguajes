@@ -25,7 +25,10 @@
 </p>
 <p>
     <asp:Label ID="lblImagenesActividad" runat="server" Text="Imagenes: "></asp:Label>
-&nbsp;&nbsp;&nbsp; //Codigo de subida de imagenes</p>
+&nbsp;&nbsp;&nbsp; </p>
+
+  <asp:FileUpload runat="server" ID="fuArchivos" AllowMultiple="true" />
+
 
 
 
