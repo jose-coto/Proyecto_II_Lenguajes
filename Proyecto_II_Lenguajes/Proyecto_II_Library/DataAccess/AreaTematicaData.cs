@@ -78,6 +78,34 @@ namespace Proyecto_II_Library.DataAccess
             return areasTematicas;
         }
 
+        public LinkedList<AreaTematica> getAllAreaTematicasByEncargado(int idEncargado)
+        {
+            String sqlSelect = "SELECT at.id_area_tematica,at.nombre_area_tematica,at.sigla,at.id_guia_reconocimiento" +
+                " FROM AreaTematica at left join EncargadoEvaluacion ee on at.id_area_tematica = ee.id_area_tematica" +
+                " where ee.id_funcionario =" + idEncargado;
+
+            SqlConnection connection = new SqlConnection(this.connectionString);
+            DataSet dsAreas = new DataSet();
+            SqlDataAdapter daAreas = new SqlDataAdapter();
+            daAreas.SelectCommand = new SqlCommand(sqlSelect, connection);
+            daAreas.Fill(dsAreas, "Areas");
+
+            DataRowCollection rows = dsAreas.Tables["Areas"].Rows;
+
+            LinkedList<AreaTematica> areasTematicas = new LinkedList<AreaTematica>();
+
+            foreach (DataRow row in rows)
+            {
+                AreaTematica area = new AreaTematica(Int32.Parse(row["id_area_tematica"].ToString()), row["nombre_area_tematica"].ToString(),
+                    row["sigla"].ToString());
+
+                area.Criterios = criterioBusiness.findAllCriteriosByAreaTematica(area.IdAreaTematica);
+                areasTematicas.AddLast(area);
+            }
+
+            return areasTematicas;
+        }
+
         public AreaTematica findAreaTematicaByCode(int idAreaTematica)
         {
             String sqlSelect = "SELECT at.id_area_tematica,at.nombre_area_tematica,at.sigla," +
@@ -105,6 +133,8 @@ namespace Proyecto_II_Library.DataAccess
 
             return areasTematica;
         }
+
+        
 
         public AreaTematica insertar(AreaTematica areaTematica,GuiaReconocimiento guia)
         {

@@ -18,6 +18,36 @@ namespace Proyecto_II_Library.DataAccess
             this.connectionString = connectionString;
         }
 
+        public Funcionario getFuncionarioByUserName(String userName)
+        {
+            String sqlSelect = "SELECT f.id_funcionario,f.nombre_funcionario,f.apellidos_funcionario," +
+                                "f.userName,f.password,f.enable,f.id_role,r.nombre_role" +
+                                " FROM Funcionario f left join Role r on f.id_role = r.id_role" +
+                                " where f.userName = '"+userName+"'";
+
+
+            SqlConnection connection = new SqlConnection(this.connectionString);
+            DataSet dsFuncionario = new DataSet();
+            SqlDataAdapter daFuncionario = new SqlDataAdapter();
+            daFuncionario.SelectCommand = new SqlCommand(sqlSelect, connection);
+            daFuncionario.Fill(dsFuncionario, "Funcionario");
+
+            DataRowCollection rows = dsFuncionario.Tables["Funcionario"].Rows;
+
+            Funcionario funcionario = null;
+
+            foreach (DataRow row in rows)
+            {
+                funcionario = new Funcionario(Int32.Parse(row["id_funcionario"].ToString()), row["nombre_funcionario"].ToString(),
+                    row["apellidos_funcionario"].ToString(), row["userName"].ToString(), row["password"].ToString(), 
+                    Boolean.Parse(row["enable"].ToString()));
+                funcionario.Role.IdRole = Int32.Parse(row["id_role"].ToString());
+                funcionario.Role.NombreRole = row["nombre_role"].ToString();
+            }
+
+            return funcionario;
+        }
+
         public Funcionario BuscarFuncionarioId(int id)
         {
             String sqlSelect = "SELECT f.id_funcionario,f.nombre_funcionario,f.apellidos_funcionario,f.userName,f.password,f.enable," +

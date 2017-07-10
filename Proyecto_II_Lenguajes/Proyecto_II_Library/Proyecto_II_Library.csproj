@@ -48,6 +48,7 @@
     <Compile Include="Business\CriterioBusiness.cs" />
     <Compile Include="Business\DocumentoBusiness.cs" />
     <Compile Include="Business\EvidenciaBusiness.cs" />
+    <Compile Include="Business\FuncionarioBusiness.cs" />
     <Compile Include="Business\GuiaReconocimientoBusiness.cs" />
     <Compile Include="Business\SeguridadBusiness.cs" />
     <Compile Include="Business\SubCriterioBusiness.cs" />
