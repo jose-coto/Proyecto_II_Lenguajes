@@ -110,7 +110,7 @@ namespace Proyecto_II_WebApp
                 DocumentoBusiness db = new DocumentoBusiness(connectionString);
                 db.insertar(documento);
             }
-            else
+            else if (evidencia.Tipo.Equals("A"))
             {       
                 Actividad actividad = new Actividad
                  (UserControlActividad1.CantidadParticipantesActividad,
