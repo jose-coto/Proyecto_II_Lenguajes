@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProyectoII.Master" AutoEventWireup="true" CodeBehind="AdministrarAreasTematicas.aspx.cs" Inherits="Proyecto_II_WebApp.AdministrarAreasTematicas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="Administrar Areas Tematicas"></asp:Label>
+    <br />
     <asp:Label ID="lblMensajeError" runat="server" Font-Size="X-Large" ForeColor="Red"></asp:Label>
     <br />
     <br />

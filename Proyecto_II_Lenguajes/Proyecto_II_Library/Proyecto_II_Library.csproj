@@ -51,6 +51,7 @@
     <Compile Include="Business\EvidenciaBusiness.cs" />
     <Compile Include="Business\FuncionarioBusiness.cs" />
     <Compile Include="Business\GuiaReconocimientoBusiness.cs" />
+    <Compile Include="Business\RecintoBusiness.cs" />
     <Compile Include="Business\SeguridadBusiness.cs" />
     <Compile Include="Business\SubCriterioBusiness.cs" />
     <Compile Include="Business\TipoDocumentoBusiness.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="DataAccess\EvidenciaData.cs" />
     <Compile Include="DataAccess\FuncionarioData.cs" />
     <Compile Include="DataAccess\GuiaReconocimientoData.cs" />
+    <Compile Include="DataAccess\RecintoData.cs" />
     <Compile Include="DataAccess\SeguridadData.cs" />
     <Compile Include="DataAccess\SubCriterioData.cs" />
     <Compile Include="DataAccess\TipoDocumentoData.cs" />

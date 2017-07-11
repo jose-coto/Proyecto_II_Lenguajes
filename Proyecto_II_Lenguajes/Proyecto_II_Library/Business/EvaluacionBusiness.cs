@@ -26,5 +26,10 @@ namespace Proyecto_II_Library.Business
         {
             return evaluacionData.getEvaluaciones();
         }
+
+        public void Insertar(Evaluacion evaluacion)
+        {
+            evaluacionData.Insertar(evaluacion);
+        }
     }
 }

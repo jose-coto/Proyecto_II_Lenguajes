@@ -10,7 +10,7 @@
 namespace Proyecto_II_WebApp {
     
     
-    public partial class AdministrarAreasTematicas {
+    public partial class InsertarEvaluacion {
         
         /// <summary>
         /// Control Label1.
@@ -22,66 +22,84 @@ namespace Proyecto_II_WebApp {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control lblMensajeError.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeError;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control lblAreaTematica.
+        /// Control tbFechaInicial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAreaTematica;
+        protected global::System.Web.UI.WebControls.TextBox tbFechaInicial;
         
         /// <summary>
-        /// Control ddlAreaTematica.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAreaTematica;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control lblCriterios.
+        /// Control tbFechaFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCriterios;
+        protected global::System.Web.UI.WebControls.TextBox tbFechaFinal;
         
         /// <summary>
-        /// Control ddlCriterios.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCriterios;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control lblSubCriterios.
+        /// Control ddlRecinto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubCriterios;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRecinto;
         
         /// <summary>
-        /// Control dlSubCriterios.
+        /// Control Label5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dlSubCriterios;
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// Control ddlGuiaReconocimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGuiaReconocimiento;
+        
+        /// <summary>
+        /// Control btnRegistrarEvaluacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegistrarEvaluacion;
     }
 }
