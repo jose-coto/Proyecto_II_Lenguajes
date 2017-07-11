@@ -4,5 +4,6 @@
 <asp:TextBox ID="tbDetalleNormativa" runat="server" Width="379px"></asp:TextBox>
 <p>
     <asp:Label ID="lblAñadirNormativa" runat="server" Text="Añadir normativa: "></asp:Label>
-&nbsp;&nbsp;&nbsp; //Añadir codigo de Juan</p>
+&nbsp;&nbsp;&nbsp; </p>
 
+<asp:FileUpload runat="server" ID="fuDocument" AllowMultiple="true" />

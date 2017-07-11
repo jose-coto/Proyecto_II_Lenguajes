@@ -89,6 +89,10 @@ namespace Proyecto_II_WebApp
             else if (evidencia.Tipo.Equals("N"))
             {
                 Normativa normativa = new Normativa();
+                normativa.IdEvidencia = evidencia.IdEvidencia;
+                normativa.Detalle = UserControlNormativa1.DetalleNormativa;
+                DocumetoNormativa document = UserControlNormativa1.documento();
+                
                 //insertar normativa
             }
             else if (evidencia.Tipo.Equals("D"))
@@ -105,6 +109,7 @@ namespace Proyecto_II_WebApp
             else
             {       
                 Actividad actividad = new Actividad
+                
                  (UserControlActividad1.CantidadParticipantesActividad,
                  UserControlActividad1.FechaActividad,
                  UserControlActividad1.DescripcionActividad,

@@ -49,6 +49,35 @@ namespace Proyecto_II_Library.DataAccess
             return evidencia;
         }
 
+        public void insertarNormativa(Normativa normativa)
+        {
+            //Insertamos el documento
+            normativa.Documento = WriteDocumentNoramativaToDB(normativa.Documento);
+            // Insertamos la normativa
+            // colocamos procedemos a insertar la actividad
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conn = new SqlConnection(this.connectionString);
+
+            // Estableciento propiedades
+            cmd.Connection = conn;
+            cmd.CommandText = "INSERT INTO Normativa VALUES (@idEvidencia, @detalle, @idDocumento)";
+            // Creando los parámetros necesarios
+            cmd.Parameters.Add("@idEvidencia", System.Data.SqlDbType.Int);
+            cmd.Parameters.Add("@detalle", System.Data.SqlDbType.VarChar);
+            cmd.Parameters.Add("@idDocumento", System.Data.SqlDbType.Int);
+
+            // Asignando los valores a los atributos
+            cmd.Parameters["@idEvidencia"].Value = normativa.IdEvidencia;
+            cmd.Parameters["@detalle"].Value = normativa.Detalle;
+            cmd.Parameters["@idDocumento"].Value = normativa.Documento.IdDocumento;
+
+            conn.Open();
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
         public Evidencia insertar(Evidencia evidencia, Evaluacion evaluacion)
         {
             SqlCommand cmdEvidencia = new SqlCommand();
@@ -160,6 +189,63 @@ namespace Proyecto_II_Library.DataAccess
         }
 
 
+        private DocumetoNormativa WriteDocumentNoramativaToDB(DocumetoNormativa documento)
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conn = new SqlConnection(this.connectionString);
+            SqlTransaction transaction = null;
+
+            // Estableciento propiedades
+            cmd.Connection = conn;
+            cmd.CommandText = "insert_document_normativa";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // Creando los parámetros necesarios
+            cmd.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
+            cmd.Parameters.Add("@size", System.Data.SqlDbType.Int);
+            cmd.Parameters.Add("@type", System.Data.SqlDbType.VarChar);
+            cmd.Parameters.Add("@data", System.Data.SqlDbType.VarBinary);
+
+            // Asignando los valores a los atributos
+            cmd.Parameters["@name"].Value = documento.Nombre;
+            cmd.Parameters["@size"].Value = documento.Data.Length;
+            cmd.Parameters["@type"].Value = documento.ContentType;
+            cmd.Parameters["@data"].Value = documento.Data;
+            
+
+            //Asignamos el parametro de salida
+            SqlParameter parametroId = new SqlParameter("@id", System.Data.SqlDbType.Int);
+            parametroId.Direction = System.Data.ParameterDirection.Output;
+            cmd.Parameters.Add(parametroId);
+
+            //Inicia transaccion
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
+                cmd.Connection = conn;
+                cmd.Transaction = transaction;
+
+                //Ejecutamos y obtenemos el id de la imagen guardada
+                cmd.ExecuteNonQuery();
+                documento.IdDocumento = Int32.Parse(cmd.Parameters["@id"].Value.ToString());
+
+                transaction.Commit();
+            }
+            catch (SqlException ex)
+            {
+                if (transaction != null) transaction.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+            }
+
+            return documento;
+
+        }
+
         private Imagen WriteImageToDB(Imagen imagen, int idAct)
         {
             
@@ -247,5 +333,39 @@ namespace Proyecto_II_Library.DataAccess
             return result;
 
         }
+
+        public DocumetoNormativa ShowDocumentFile(int FileID)
+        {
+            string SQL = "SELECT FILE_SIZE, FILE_DATA, CONTENT_TYPE, FILE_NAM FROM DOCUMENTO_NORMATIVA WHERE ID_DOCUMENTO = "
+            + FileID.ToString();
+
+            // Create Connection object
+            OleDbConnection dbConn = new OleDbConnection("Provider=SQLOLEDB; Data Source=163.178.173.148;Initial Catalog=ProyectoII_Lenguajes_2017;User ID=lenguajes;Password=lenguajes");
+
+            // Create Command Object
+            OleDbCommand dbComm = new OleDbCommand(SQL, dbConn);
+
+            // Open Connection
+            dbConn.Open();
+
+            // Execute command and receive DataReader
+            OleDbDataReader dbRead = dbComm.ExecuteReader();
+
+            // Read row
+            dbRead.Read();
+
+            DocumetoNormativa document = new DocumetoNormativa(FileID, (string)dbRead["FILE_NAM"], (int)dbRead["FILE_SIZE"], (string)dbRead["CONTENT_TYPE"], (byte[])dbRead["FILE_DATA"]);
+
+            // Close database connection
+            dbConn.Close();
+
+            return document;
+
+        }
     }
+
+
+
+
+
 }

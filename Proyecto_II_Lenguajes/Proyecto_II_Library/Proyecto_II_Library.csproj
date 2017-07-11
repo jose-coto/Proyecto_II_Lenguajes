@@ -69,6 +69,7 @@
     <Compile Include="Domain\AreaTematica.cs" />
     <Compile Include="Domain\Criterio.cs" />
     <Compile Include="Domain\Documento.cs" />
+    <Compile Include="Domain\DocumetoNormativa.cs" />
     <Compile Include="Domain\EncargadoEvaluacion.cs" />
     <Compile Include="Domain\Evaluacion.cs" />
     <Compile Include="Domain\Evidencia.cs" />

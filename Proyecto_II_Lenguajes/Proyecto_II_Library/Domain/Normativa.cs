@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_II_Library.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +11,17 @@ namespace Proyecto_II_Library.Domain
     {
         private String detalle;
         private String normativaAdjunta;
+        private DocumetoNormativa documento; 
 
         public Normativa()
         {
         }
 
-        public Normativa(string detalle, string normativaAdjunta)
+        public Normativa(string detalle, string normativaAdjunta, DocumetoNormativa documento)
         {
             this.detalle = detalle;
             this.normativaAdjunta = normativaAdjunta;
+            this.documento = documento;
         }
 
         public string Detalle
@@ -44,6 +47,19 @@ namespace Proyecto_II_Library.Domain
             set
             {
                 normativaAdjunta = value;
+            }
+        }
+
+        public DocumetoNormativa Documento
+        {
+            get
+            {
+                return documento;
+            }
+
+            set
+            {
+                documento = value;
             }
         }
     }

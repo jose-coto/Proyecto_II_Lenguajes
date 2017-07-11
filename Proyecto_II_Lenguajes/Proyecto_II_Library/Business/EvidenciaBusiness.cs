@@ -37,5 +37,18 @@ namespace Proyecto_II_Library.Business
             return evidenciaData.ShowTheFile(FileID);
         }
 
+        public DocumetoNormativa ShowDocumentNormativa(int FileID)
+        {
+            return evidenciaData.ShowDocumentFile(FileID);
+        }
+
+
+        public void insertarNormativa(Normativa normativa)
+        {
+            evidenciaData.insertarNormativa(normativa);
+        }
+
+
+
         }
 }
