@@ -40,7 +40,7 @@ namespace Proyecto_II_Library.DataAccess
             sqlCommand.Parameters.Add(new SqlParameter("@userName", funcionario.UserName));
             sqlCommand.Parameters.Add(new SqlParameter("@password", funcionario.Password));
             sqlCommand.Parameters.Add(new SqlParameter("@enable", funcionario.Enable));
-            sqlCommand.Parameters.Add(new SqlParameter("@apellidos", funcionario.Role.IdRole));
+            sqlCommand.Parameters.Add(new SqlParameter("@idRole", funcionario.Role.IdRole));
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {

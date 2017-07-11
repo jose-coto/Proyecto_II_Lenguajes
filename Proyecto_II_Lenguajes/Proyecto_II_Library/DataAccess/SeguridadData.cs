@@ -49,6 +49,42 @@ namespace Proyecto_II_Library.DataAccess
             return funcionarios;
         }
 
+        public Role getRoleByName(string name)
+        {
+            String sqlSelect = "SELECT * From Role r WHERE r.nombre_role = '" + name + "'";
+            SqlConnection connection = new SqlConnection(this.connectionString);
+            DataSet dsRole = new DataSet();
+            SqlDataAdapter daRole = new SqlDataAdapter();
+            daRole.SelectCommand = new SqlCommand(sqlSelect, connection);
+            daRole.Fill(dsRole, "Role");
+            DataRowCollection rows = dsRole.Tables["Role"].Rows;
+            LinkedList<Role> roles = new LinkedList<Role>();
+            foreach (DataRow row in rows)
+            {
+                Role role = new Role(Int32.Parse(row["id_role"].ToString()), row["nombre_role"].ToString());
+                roles.AddLast(role);
+            }
+            return roles.First != null ? roles.First.Value : null;
+        }
+
+        public LinkedList<Role> getAllRolesList()
+        {
+            String sqlSelect = "SELECT * From Role r";
+            SqlConnection connection = new SqlConnection(this.connectionString);
+            DataSet dsRole = new DataSet();
+            SqlDataAdapter daRole = new SqlDataAdapter();
+            daRole.SelectCommand = new SqlCommand(sqlSelect, connection);
+            daRole.Fill(dsRole, "Role");
+            DataRowCollection rows = dsRole.Tables["Role"].Rows;
+            LinkedList<Role> roles = new LinkedList<Role>();
+            foreach (DataRow row in rows)
+            {
+                Role role = new Role(Int32.Parse(row["id_role"].ToString()), row["nombre_role"].ToString());
+                roles.AddLast(role);
+            }
+            return roles;
+        }
+
         private String[] RoleExtractor(DataSet dsRole)
         {
             DataRowCollection rows = dsRole.Tables["Role"].Rows;

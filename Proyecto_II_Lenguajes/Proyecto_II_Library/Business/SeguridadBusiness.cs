@@ -48,6 +48,10 @@ namespace Proyecto_II_Library.Business
         {
             return seguridadData.getAllRoles();
         }
+        public LinkedList<Role> getAllRolesList()
+        {
+            return seguridadData.getAllRolesList();
+        }
         public String[] getRolesForUser(String username)
         {
             return seguridadData.getRolesForUser(username);
@@ -55,6 +59,10 @@ namespace Proyecto_II_Library.Business
         public String[] getUsersInRole(String roleName)
         {
             return seguridadData.getUsersInRole(roleName);
+        }
+        public Role getRoleByName(String name)
+        {
+            return seguridadData.getRoleByName(name);
         }
     }   
 }

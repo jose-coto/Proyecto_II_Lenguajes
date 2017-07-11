@@ -184,8 +184,10 @@ namespace Proyecto_II_WebApp
                 WebConfigurationManager.ConnectionStrings["ProyectoII"].ConnectionString);
             
             try
-            { 
-                guiaReconocimientoBusiness.insertGuide(Session["guiaReconocimiento"] as GuiaReconocimiento);
+            {
+                GuiaReconocimiento guiaReconocimiento = Session["guiaReconocimiento"] as GuiaReconocimiento;
+                guiaReconocimiento.Vigente = true;
+                guiaReconocimientoBusiness.insertGuide(guiaReconocimiento);
             }
             catch(Exception ex)
             {
