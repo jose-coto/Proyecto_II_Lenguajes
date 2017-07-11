@@ -68,6 +68,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ViewDocument.aspx" />
     <Content Include="ViewImagen.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="insertarEvidencia.aspx" />
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="AdministrarAreasTematicas.aspx.designer.cs">
       <DependentUpon>AdministrarAreasTematicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDocument.aspx.cs">
+      <DependentUpon>ViewDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDocument.aspx.designer.cs">
+      <DependentUpon>ViewDocument.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewImagen.aspx.cs">
       <DependentUpon>ViewImagen.aspx</DependentUpon>
