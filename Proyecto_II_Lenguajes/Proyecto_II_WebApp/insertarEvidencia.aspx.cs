@@ -76,8 +76,8 @@ namespace Proyecto_II_WebApp
             evidencia.Titulo = tbTitulo.Text;
             evidencia.FechaIngreso = DateTime.Parse(tbFecha.Text);
             evidencia.Tipo = Char.Parse(ddlTipoEvidencia.SelectedValue.ToString());
-            // evidencia.SubCriterio.IdSubCriterio = Convert.ToInt32(Request.QueryString["idSubCriterio"]);
-            evidencia.SubCriterio.IdSubCriterio = 1;
+            evidencia.SubCriterio.IdSubCriterio = Convert.ToInt32(Request.QueryString["idSubCriterio"]);
+            
 
             EvidenciaBusiness evidenciaBusiness = new EvidenciaBusiness(connectionString);
 
