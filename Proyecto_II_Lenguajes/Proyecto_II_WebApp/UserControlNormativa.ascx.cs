@@ -27,7 +27,8 @@ namespace Proyecto_II_WebApp
             if (fuDocument.PostedFile != null)
             {
                 HttpPostedFile currentImage = fuDocument.PostedFile;          
-                int size = documento.Size;
+                int size = currentImage.ContentLength;
+                documento.Size = size;
                 documento.Nombre = currentImage.FileName;
                 documento.ContentType = currentImage.ContentType;
                 documento.Data = new byte[size];

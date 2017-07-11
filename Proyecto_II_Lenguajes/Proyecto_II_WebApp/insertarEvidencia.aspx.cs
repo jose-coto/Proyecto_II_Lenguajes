@@ -77,6 +77,7 @@ namespace Proyecto_II_WebApp
             evidencia.FechaIngreso = DateTime.Parse(tbFecha.Text);
             evidencia.Tipo = Char.Parse(ddlTipoEvidencia.SelectedValue.ToString());
             evidencia.SubCriterio.IdSubCriterio = Convert.ToInt32(Request.QueryString["idSubCriterio"]);
+            
 
             EvidenciaBusiness evidenciaBusiness = new EvidenciaBusiness(connectionString);
 
@@ -85,7 +86,7 @@ namespace Proyecto_II_WebApp
 
             evidencia = evidenciaBusiness.insertar(evidencia, evaluacion);
 
-            if (evidencia.Tipo.Equals("M"))
+            if (evidencia.Tipo == 'M')
             {
                 AccionAdministrativa accion = new AccionAdministrativa();
                 accion.Detalle = UserControlAccionAdministrativa1.DetalleAccion;
@@ -94,16 +95,16 @@ namespace Proyecto_II_WebApp
                 AccionAdministrativaBusiness aad = new AccionAdministrativaBusiness(connectionString);
                 aad.insertar(accion);
             }
-            else if (evidencia.Tipo.Equals("N"))
+            else if (evidencia.Tipo == 'N')
             {
                 Normativa normativa = new Normativa();
                 normativa.IdEvidencia = evidencia.IdEvidencia;
                 normativa.Detalle = UserControlNormativa1.DetalleNormativa;
-                DocumetoNormativa document = UserControlNormativa1.documento();
+                normativa.Documento = UserControlNormativa1.documento();
                 evidenciaBusiness.insertarNormativa(normativa);
-                //insertar normativa
+                
             }
-            else if (evidencia.Tipo.Equals("D"))
+            else if (evidencia.Tipo == 'D')
             {
                 Documento documento = new Documento();
                 documento.Detalle = UserControlDocumento1.DetalleDocumento;
@@ -114,7 +115,7 @@ namespace Proyecto_II_WebApp
                 DocumentoBusiness db = new DocumentoBusiness(connectionString);
                 db.insertar(documento);
             }
-            else if (evidencia.Tipo.Equals("A"))
+            else if (evidencia.Tipo == 'A')
             {       
                 Actividad actividad = new Actividad
                 
