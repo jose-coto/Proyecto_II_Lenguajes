@@ -25,11 +25,50 @@ namespace Proyecto_II_WebApp
             }
         }
 
+
+
         public int CantidadParticipantesActividad
         {
-            get { return Int32.Parse(tbCantidadParticipantesctividad.Text); }
-            set { tbCantidadParticipantesctividad.Text = value.ToString(); }
+            get { return Int32.Parse(tbCantidadParticipantesActividad.Text); }
+            set { tbCantidadParticipantesActividad.Text = value.ToString(); }
         }
+
+        public LinkedList<TipoParticipante> tipoParticipantes
+        {
+            get
+            {
+                LinkedList<TipoParticipante> participantesSeleccionados = new LinkedList<TipoParticipante>();
+                foreach (ListItem item in lblTipoPrticipantesSeleccionados.Items)
+                {
+                    participantesSeleccionados.AddLast(new TipoParticipante(Int32.Parse(item.Value), item.Text));
+                }
+                return participantesSeleccionados;
+            }
+        }
+
+
+        public LinkedList<Imagen> imagenes()
+        {
+            LinkedList<Imagen> imagenes = new LinkedList<Imagen>();
+            if (fuArchivos.PostedFiles != null)
+                {
+                    foreach (HttpPostedFile currentImage in fuArchivos.PostedFiles)
+                    {
+                        Imagen imagen = new Imagen();
+                        imagen.Size = currentImage.ContentLength;
+                        int size = imagen.Size;
+                        imagen.Nombre = currentImage.FileName;
+                        imagen.ContentType = currentImage.ContentType;
+                        imagen.Data = new byte[size];
+                        currentImage.InputStream.Read(imagen.Data,0,size);
+                        imagenes.AddLast(imagen);
+                    }
+
+                }
+
+                return imagenes;
+        }
+
 
         public DateTime FechaActividad
         {

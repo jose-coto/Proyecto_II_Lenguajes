@@ -22,13 +22,13 @@ namespace Proyecto_II_WebApp {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control tbCantidadParticipantesctividad.
+        /// Control tbCantidadParticipantesActividad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbCantidadParticipantesctividad;
+        protected global::System.Web.UI.WebControls.TextBox tbCantidadParticipantesActividad;
         
         /// <summary>
         /// Control lblFechaActividad.
@@ -119,5 +119,14 @@ namespace Proyecto_II_WebApp {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblImagenesActividad;
+        
+        /// <summary>
+        /// Control fuArchivos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuArchivos;
     }
 }

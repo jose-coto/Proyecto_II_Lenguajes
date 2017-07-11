@@ -37,5 +37,10 @@ namespace Proyecto_II_Library.Business
             return areaTematicaData.insertar(areaTematica, guia);
         }
 
+        public LinkedList<AreaTematica> getAllAreaTematicasByEncargado(int idEncargado)
+        {
+            return areaTematicaData.getAllAreaTematicasByEncargado(idEncargado);
+        }
+
     }
 }

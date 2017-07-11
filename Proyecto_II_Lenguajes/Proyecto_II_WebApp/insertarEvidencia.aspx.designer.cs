@@ -58,6 +58,24 @@ namespace Proyecto_II_WebApp {
         protected global::System.Web.UI.WebControls.TextBox tbFecha;
         
         /// <summary>
+        /// Control lblEvaluacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEvaluacion;
+        
+        /// <summary>
+        /// Control ddlEvaluacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEvaluacion;
+        
+        /// <summary>
         /// Control lblTipoEvidencia.
         /// </summary>
         /// <remarks>

@@ -26,5 +26,16 @@ namespace Proyecto_II_Library.Business
         {
             return evidenciaData.insertar(evidencia, evaluacion);
         }
-    }
+
+        public void insertarActividad(Actividad actividad)
+        {
+            evidenciaData.insertarActividad(actividad);
+        }
+
+        public Imagen ShowTheFile(int FileID)
+        {
+            return evidenciaData.ShowTheFile(FileID);
+        }
+
+        }
 }
