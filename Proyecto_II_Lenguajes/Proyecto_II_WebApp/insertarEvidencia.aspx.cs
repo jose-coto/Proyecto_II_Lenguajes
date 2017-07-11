@@ -100,7 +100,7 @@ namespace Proyecto_II_WebApp
                 normativa.IdEvidencia = evidencia.IdEvidencia;
                 normativa.Detalle = UserControlNormativa1.DetalleNormativa;
                 DocumetoNormativa document = UserControlNormativa1.documento();
-                
+                evidenciaBusiness.insertarNormativa(normativa);
                 //insertar normativa
             }
             else if (evidencia.Tipo.Equals("D"))
