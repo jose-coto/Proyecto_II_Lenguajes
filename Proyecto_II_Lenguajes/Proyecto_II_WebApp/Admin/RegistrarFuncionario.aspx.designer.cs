@@ -10,132 +10,186 @@
 namespace Proyecto_II_WebApp {
     
     
-    public partial class insertarEvidencia {
+    public partial class RegistrarFuncionario {
         
         /// <summary>
-        /// Control lblMensajeEvidencia.
+        /// Control lblMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeEvidencia;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
         
         /// <summary>
-        /// Control lblTitulo.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitulo;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control tbTitulo.
+        /// Control tbNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbTitulo;
+        protected global::System.Web.UI.WebControls.TextBox tbNombre;
         
         /// <summary>
-        /// Control lblFecha.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFecha;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control tbFecha.
+        /// Control tbApellidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFecha;
+        protected global::System.Web.UI.WebControls.TextBox tbApellidos;
         
         /// <summary>
-        /// Control lblEvaluacion.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEvaluacion;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control ddlEvaluacion.
+        /// Control tbUsername.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEvaluacion;
+        protected global::System.Web.UI.WebControls.TextBox tbUsername;
         
         /// <summary>
-        /// Control lblTipoEvidencia.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoEvidencia;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control ddlTipoEvidencia.
+        /// Control tbPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoEvidencia;
+        protected global::System.Web.UI.WebControls.TextBox tbPassword;
         
         /// <summary>
-        /// Control UserControlAccionAdministrativa1.
+        /// Control Label5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Proyecto_II_WebApp.UserControlAccionAdministrativa UserControlAccionAdministrativa1;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control UserControlDocumento1.
+        /// Control ddlRoles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Proyecto_II_WebApp.UserControlDocumento UserControlDocumento1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRoles;
         
         /// <summary>
-        /// Control UserControlNormativa1.
+        /// Control btnRegistrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Proyecto_II_WebApp.UserControlNormativa UserControlNormativa1;
+        protected global::System.Web.UI.WebControls.Button btnRegistrar;
         
         /// <summary>
-        /// Control UserControlActividad1.
+        /// Control btnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Proyecto_II_WebApp.UserControlActividad UserControlActividad1;
+        protected global::System.Web.UI.WebControls.Button btnActualizar;
         
         /// <summary>
-        /// Control btnRegistrarEvidencia.
+        /// Control btnReset.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrarEvidencia;
+        protected global::System.Web.UI.WebControls.Button btnReset;
+        
+        /// <summary>
+        /// Control gvFuncionarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvFuncionarios;
+        
+        /// <summary>
+        /// Control dsGVFuncionarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsGVFuncionarios;
+        
+        /// <summary>
+        /// Control gvEncargadoDe.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvEncargadoDe;
+        
+        /// <summary>
+        /// Control dsGVEncargados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsGVEncargados;
+        
+        /// <summary>
+        /// Control ddlAreas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlAreas;
+        
+        /// <summary>
+        /// Control btnEncargadoDe.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEncargadoDe;
     }
 }

@@ -40,7 +40,7 @@ namespace Proyecto_II_Library.DataAccess
             foreach (DataRow row in rows)
             {
                 Criterio criterio = new Criterio(Int32.Parse(row["id_criterio"].ToString()), row["descripcion"].ToString());
-                criterio.SubCriterios = subCriterioBusiness.getAllSubCriteriosByCriterio(criterio.IdCriterio);
+                //criterio.SubCriterios = subCriterioBusiness.getAllSubCriteriosByCriterio(criterio.IdCriterio);
                 criterios.AddLast(criterio);
             }
 

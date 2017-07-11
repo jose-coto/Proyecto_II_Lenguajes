@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserControlActividad.ascx.cs" Inherits="Proyecto_II_WebApp.UserControlActividad" %>
 <asp:Label ID="Label1" runat="server" Text="Cantidad Participantes:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
-<asp:TextBox ID="tbCantidadParticipantesctividad" runat="server" TextMode="Number" Width="81px"></asp:TextBox>
+<asp:TextBox ID="tbCantidadParticipantesActividad" runat="server" TextMode="Number" Width="81px"></asp:TextBox>
 <p>
     <asp:Label ID="lblFechaActividad" runat="server" Text="Fecha: "></asp:Label>
 &nbsp;&nbsp;&nbsp;
