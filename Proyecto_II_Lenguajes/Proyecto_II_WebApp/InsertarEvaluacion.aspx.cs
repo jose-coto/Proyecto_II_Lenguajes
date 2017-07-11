@@ -12,7 +12,6 @@ namespace Proyecto_II_WebApp
 {
     public partial class InsertarEvaluacion : System.Web.UI.Page
     {
-
         private String connectionString = WebConfigurationManager.ConnectionStrings["ProyectoII"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)

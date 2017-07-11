@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProyectoII.Master" AutoEventWireup="true" CodeBehind="InsertarEvaluacion.aspx.cs" Inherits="Proyecto_II_WebApp.InsertarEvaluacion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Registro de una nueva evaluación"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Registro de una nueva evaluación"></asp:Label>
     <br />
     <br />
     <asp:Label ID="Label2" runat="server" Font-Size="Large" Text="Fecha Inicial:"></asp:Label>
