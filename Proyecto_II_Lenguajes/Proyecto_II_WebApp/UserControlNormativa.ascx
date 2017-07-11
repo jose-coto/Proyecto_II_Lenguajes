@@ -6,4 +6,4 @@
     <asp:Label ID="lblAñadirNormativa" runat="server" Text="Añadir normativa: "></asp:Label>
 &nbsp;&nbsp;&nbsp; </p>
 
-<asp:FileUpload runat="server" ID="fuDocument" AllowMultiple="true" />
+<asp:FileUpload runat="server" ID="fuDocument"/>
